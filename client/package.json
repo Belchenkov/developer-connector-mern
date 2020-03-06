@@ -15,7 +15,8 @@
     "react-scripts": "1.1.4",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "uuid": "^7.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
