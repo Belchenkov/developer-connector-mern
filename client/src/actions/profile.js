@@ -124,3 +124,12 @@ export const addEducation = (formData, history) => async dispatch => {
     }
 };
 
+// Delete Education
+export const deleteEducation = (formData, history) => async dispatch => {
+
+};
+
+// Delete Experience
+export const deleteExperience = (formData, history) => async dispatch => {
+
+};
