@@ -27,7 +27,7 @@ const EditProfile = ({
             youtube: loading || !profile.youtube ? '' : bio.social.youtube,
             instagram: loading || !profile.instagram ? '' : bio.social.instagram
         }, [loading]);
-    });
+    }, [loading, getCurrentProfile]);
 
     const [ formData, setFormData ] = useState({
         handle: '',
