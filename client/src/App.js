@@ -10,21 +10,10 @@ import store from "./store";
 import setAuthToken from "./utils/setAuthToken";
 import { loadUser } from "./actions/auth";
 
-
 // Components
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
-import PrivateRoute from "./components/routing/PrivateRoute";
-import Register from "./components/auth/Register";
-import Login from "./components/auth/Login";
-import Alert from "./components/layout/Alert";
-import Dashboard from "./components/dashboard/Dashboard";
-import CreateProfile from "./components/profile-forms/CreateProfile";
-import EditProfile from "./components/profile-forms/EditProfile";
-import Profiles from "./components/profiles/Profiles";
-import Profile from "./components/profile/Profile";
-import Posts from "./components/posts/posts";
-import Post from "./components/post/post";
+import Routes from "./components/routing/Routes";
 
 if (localStorage.token) {
     setAuthToken(localStorage.token);
@@ -40,21 +29,10 @@ const App = () => {
             <Router>
                 <Fragment>
                     <Navbar />
-                    <Route exact path="/" component={Landing} />
-                    <section className="container">
-                        <Alert />
-                        <Switch>
-                            <Route exact path="/register" component={Register} />
-                            <Route exact path="/login" component={Login} />
-                            <Route exact path="/profiles" component={Profiles} />
-                            <Route exact path="/profile/:id" component={Profile} />
-                            <PrivateRoute exact path="/dashboard" component={Dashboard} />
-                            <PrivateRoute exact path="/create-profile" component={CreateProfile} />
-                            <PrivateRoute exact path="/edit-profile" component={EditProfile} />
-                            <PrivateRoute exact path="/posts" component={Posts} />
-                            <PrivateRoute exact path="/post/:id" component={Post} />
-                        </Switch>
-                    </section>
+                    <Switch>
+                        <Route exact path="/" component={Landing} />
+                        <Route component={Routes} />
+                    </Switch>
                 </Fragment>
             </Router>
         </Provider>
